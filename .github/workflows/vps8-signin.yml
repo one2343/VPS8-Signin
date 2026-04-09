@@ -33,7 +33,7 @@ jobs:
       - name: 🛠️ 安装系统依赖
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y google-chrome-stable xvfb ffmpeg
+          sudo apt-get install -y google-chrome-stable xvfb ffmpeg fonts-wqy-zenhei fonts-noto-cjk
 
       - name: 🐍 安装 Python 依赖
         run: pip install seleniumbase requests pydub SpeechRecognition
