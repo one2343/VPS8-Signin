@@ -1,4 +1,4 @@
-name: VPS8-Signin (WARP + Buster + 私库版)
+name: VPS8-Signin
 
 on:
   workflow_dispatch:
