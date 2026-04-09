@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '0 1 * * *'   # 每天 UTC 01:00（北京时间 09:00）
 
+permissions:
+  contents: write 
+  actions: write
+
 jobs:
   signin:
     runs-on: ubuntu-latest
@@ -53,3 +57,12 @@ jobs:
         with:
           name: debug-screenshots
           path: "*.png"
+
+      - name: 🧹 清理旧的运行记录 (只保留最近3次)
+        uses: Mattraks/delete-workflow-runs@v2
+        if: always()
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 3
