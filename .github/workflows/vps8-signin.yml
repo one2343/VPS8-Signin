@@ -37,7 +37,7 @@ jobs:
 
       - name: 🧩 下载 Buster 扩展
         run: |
-          wget -q https://github.com/dessant/buster/releases/download/v2.0.1/buster-extension-2.0.1-chrome.zip -O buster.zip
+          wget -q https://github.com/dessant/buster/releases/download/v3.1.0/buster_captcha_solver_for_humans-3.1.0-chrome.zip -O buster.zip
           unzip -q buster.zip -d buster_extension
           rm buster.zip
 
