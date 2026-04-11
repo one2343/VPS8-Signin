@@ -45,11 +45,12 @@ jobs:
       - name: 🚀 运行签到脚本
         env:
           PYTHONIOENCODING: utf-8
+          PYTHONUNBUFFERED: "1"
           VPS8_ACCOUNT: ${{ secrets.VPS8_ACCOUNT }}
           TG_BOT: ${{ secrets.TG_BOT }}
         run: |
           xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" \
-            python signin.py
+            python -u signin.py
 
       - name: 📸 上传报错截图
         if: always()
