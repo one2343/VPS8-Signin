@@ -37,10 +37,10 @@ jobs:
       - name: 🛠️ 安装系统依赖
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y google-chrome-stable xvfb ffmpeg fonts-wqy-zenhei fonts-noto-cjk
+          sudo apt-get install -y google-chrome-stable xvfb fonts-wqy-zenhei fonts-noto-cjk
 
       - name: 🐍 安装 Python 依赖
-        run: pip install seleniumbase requests pydub SpeechRecognition
+        run: pip install seleniumbase requests
 
       - name: 🚀 运行签到脚本
         env:
@@ -52,7 +52,7 @@ jobs:
           xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" \
             python -u signin.py
 
-      - name: 📸 上传报错截图
+      - name: 📸 上传报错与坐标追踪截图
         if: always()
         uses: actions/upload-artifact@v4
         with:
